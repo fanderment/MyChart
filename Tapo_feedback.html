@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tapo feedback</title>
+    <script
+      type="text/javascript"
+      src="vis-network.min.js"
+    ></script>
+    <style type="text/css">
+      #mynetwork {
+        width: auto;
+        height: 1080px;
+        border: 1px solid rgb(7, 7, 7);
+      }
+    </style>
+        <meta charset="UTF-8">
+        <meta name="viewport"content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible"content="ie=edge">
+        <meta name="viewport"content="width=device-width,initial-scale=1.0,user-scalable=no">
+        <title>C320WS市场反馈_20211228</title>
+        <script>
+        //窗口大小变化时候，进行刷新页面操作，防止样式混乱
+           
+        var x=window.innerWidth;
+        var y=window.innerHeight;
+        function resizeFresh(){
+           
+        if((x!=window.innerWidth)||y!=window.innerHeight)
+           
+        location.reload();
+           
+        }
+    
+        </script>
+  </head>
+  <body onresize="resizeFresh()">
+  <body style="height: 100%; margin: 0">
+
+  <body>
+    <div id="mynetwork"></div>
+    <script type="text/javascript">
+      // create an array with nodes
+      var nodes = new vis.DataSet([
+        
+      { id: 1, label: "Tapo Plug" , shape: "box",color:"#FF9797"},
+{ id: 2, label: "Tapo Cam" , shape: "box",color:"#FF9797"},
+{ id: 3, label: "Tapo APP" , shape: "box",color:"#FF9797"},
+{ id: 4, label: "Tapo Bulb" , shape: "box",color:"#FF9797"},
+{ id: 5, label: "Energy Monitoring" , shape: "box",color:"#A8FF24"},
+{ id: 6, label: "Motion Detection" , shape: "box",color:"#A8FF24"},
+{ id: 7, label: "Live view" , shape: "box",color:"#A8FF24"},
+{ id: 8, label: "Android/iOS Widget" , shape: "box",color:"#A8FF24"},
+{ id: 9, label: "APP integration" , shape: "box",color:"#A8FF24"},
+{ id: 10, label: "Fade On/Off" , shape: "box",color:"#A8FF24"},
+{ id: 11, label: "Battery Consumption" , shape: "box",color:"#A8FF24"},
+{ id: 12, label: "Firmware Upgrade" , shape: "box",color:"#A8FF24"},
+{ id: 13, label: "Sunset/Sunrise Schedule" , shape: "box",color:"#A8FF24"},
+{ id: 14, label: "Motion Tracking" , shape: "box",color:"#A8FF24"},
+{ id: 15, label: "Group Control" , shape: "box",color:"#A8FF24"},
+{ id: 16, label: "Home/Away Mode" , shape: "box",color:"#A8FF24"},
+{ id: 17, label: "PC viewing" , shape: "box",color:"#A8FF24"},
+{ id: 18, label: "Rich Notification" , shape: "box",color:"#A8FF24"},
+{ id: 19, label: "Patrol Mode" , shape: "box",color:"#A8FF24"},
+{ id: 20, label: "Home Page" , shape: "box",color:"#A8FF24"},
+{ id: 21, label: "Account Security" , shape: "box",color:"#A8FF24"},
+{ id: 22, label: "SD Card" , shape: "box",color:"#A8FF24"},
+{ id: 23, label: "Playback" , shape: "box",color:"#A8FF24"},
+{ id: 24, label: "Memory " , shape: "box",color:"#A8FF24"},
+{ id: 25, label: "Message Center" , shape: "box",color:"#A8FF24"},
+{ id: 26, label: "Smart Action" , shape: "box",color:"#A8FF24"},
+{ id: 27, label: "Notification Schedule" , shape: "box",color:"#A8FF24"},
+{ id: 28, label: "Dark Mode" , shape: "box",color:"#A8FF24"},
+{ id: 29, label: "Language" , shape: "box",color:"#A8FF24"},
+{ id: 30, label: "Picture-in-Picture" , shape: "box",color:"#A8FF24"},
+{ id: 31, label: "Configuration" , shape: "box",color:"#A8FF24"},
+{ id: 32, label: "Live View" , shape: "box",color:"#A8FF24"},
+{ id: 33, label: "Notification Sound" , shape: "box",color:"#A8FF24"},
+{ id: 34, label: "Device Icon" , shape: "box",color:"#A8FF24"},
+{ id: 35, label: "Continuous Viewing" , shape: "box",color:"#A8FF24"},
+{ id: 36, label: "Device Sharing" , shape: "box",color:"#A8FF24"},
+{ id: 37, label: "Alarm" , shape: "box",color:"#A8FF24"},
+{ id: 38, label: "Email Notification" , shape: "box",color:"#A8FF24"},
+{ id: 39, label: "Sound detection" , shape: "box",color:"#A8FF24"},
+{ id: 40, label: "Power-on State" , shape: "box",color:"#A8FF24"},
+{ id: 41, label: "Security" , shape: "box",color:"#A8FF24"},
+{ id: 42, label: "HQ-LQ" , shape: "box",color:"#A8FF24"},
+{ id: 43, label: "Notification " , shape: "box",color:"#A8FF24"},
+{ id: 44, label: "Audio Quality" , shape: "box",color:"#A8FF24"},
+{ id: 45, label: "Electronic Fence" , shape: "box",color:"#A8FF24"},
+{ id: 46, label: "WEB UI" , shape: "box",color:"#A8FF24"},
+{ id: 47, label: "Schedule" , shape: "box",color:"#A8FF24"},
+{ id: 48, label: "Third-party support" , shape: "box",color:"#A8FF24"},
+{ id: 49, label: "Watermark" , shape: "box",color:"#A8FF24"},
+{ id: 50, label: "Image Qulity" , shape: "box",color:"#A8FF24"},
+{ id: 51, label: " 希望支持energy monitoring功能，统计用电量" , shape: "box", title: " 用户在使用Plug的同时，可以统计后端设备用电量 "}, 
+{ id: 52, label: " 抱怨C310 在下雨时频繁误触发移动侦测" , shape: "box", title: " 雨天场景下，用户易收到过多的移动侦测误报，影响正常使用。需要算法优化 "}, 
+{ id: 53, label: "live view界面添加tag，标识相机当前是否处于侦测模式" , shape: "box", title: " 可丰富产品功能，用户进入设备页面后，可在live view界面快速了解设备的侦测状态 "}, 
+{ id: 54, label: "Tapo APP可以在桌面添加小部件，可以快捷控制Tapo设备" , shape: "box", title: " 用户希望系统桌面可以使用小部件及shorcut快捷控制设备并了解设备状态（如Plug的开关状态） "}, 
+{ id: 55, label: "Tapo和Kasa以及Deco合并，可以用一个APP管理Tapo/Kasa 设备" , shape: "box", title: " 可更方便地使用TP-Link产品，并在不同产品之间建立智能场景 "}, 
+{ id: 56, label: "Tapo和Kasa合并，可以用一个APP管理Tapo/Kasa 设备" , shape: "box", title: " 可更方便地使用TP-Link产品，并在不同产品之间建立智能场景 "}, 
+{ id: 57, label: "turn on/off后，灯泡可以在一段时间后时间从1%亮度渐变到100%" , shape: "box", title: " 可丰富使用场景，提升用户使用体验，例如在日出日落时，设定灯泡在一段时间内，逐渐渐变到对应亮度， "}, 
+{ id: 58, label: "使用tapo app后iPhone SE耗电变得很快" , shape: "box", title: " 用户反馈使用tapo app后iPhone SE耗电变得很快，仅记录，关注后续反馈数量 "}, 
+{ id: 59, label: "升级固件时，设备可以保持当前开关状态" , shape: "box", title: " 升级固件时，设备会重启，导致后端设备（如PC）异常断电。 "}, 
+{ id: 60, label: "可以根据每天日出和日落的时间来设置灯泡的开关日程" , shape: "box", title: " 用户希望在日出后关闭灯泡，日落前半个小时打开灯泡。每天的日出日落时间不一样，需要根据地区来推算时间， "}, 
+{ id: 61, label: "可以自动追踪触发移动侦测的人/物体" , shape: "box", title: " 可以丰富移动侦测的功能，在侦测到动作时，持续录制移动物体，提升侦测及录制功能的使用体验 "}, 
+{ id: 62, label: "可以设置Group, 来快捷调整多个设备亮度及颜色" , shape: "box", title: " 当用户设备较多时，可以添加group，快捷调整多个设备亮度及颜色，提升用户使用体验 "}, 
+{ id: 63, label: "可以通过APP或者设备LED灯识别设备工作在home mode还是away mode" , shape: "box", title: " 当用户开启或关闭了home mode还是away mode后，没有明确的指示告诉用户当前设备的状态 "}, 
+{ id: 64, label: "在PC上使用及管理相机" , shape: "box", title: " 支持在PC上使用及管理相机，由于暂无相关计划，仅记录 "}, 
+{ id: 65, label: "在移动侦测触发，发送notification时，可以同时发送一张缩略图" , shape: "box", title: " 用户在收到移动侦测的推送后，可以通过缩略图快速预览侦测的情况，可以有效提升用户使用体验 "}, 
+{ id: 66, label: "增加定点巡航功能，可以侦测多个区域" , shape: "box", title: " 可丰富产品功能，当用户有多个区域需要侦测时，可以自动在几个区域之间巡航 "}, 
+{ id: 67, label: "增加设备分类功能，在首页可以自定义分类，并添加显示设备" , shape: "box", title: " 当用户设备数量较多时，可提升用户的使用体验 "}, 
+{ id: 68, label: "希望APP登录时，可以开启两步验证" , shape: "box", title: " 有助于提高账号的安全性 "}, 
+{ id: 69, label: "希望APP的device list界面，设备按钮上可以显示设备当前的开关状态" , shape: "box", title: " 用户有多个设备时，可以快捷地通过APP首页获知设备的开启/关闭状态，可以有效提升用户使用体验 "}, 
+{ id: 70, label: "希望C200可以跟SD卡打包一起售卖" , shape: "box", title: " 仅记录，看后续反馈数量 "}, 
+{ id: 71, label: "希望camera回放的刻度可以再小一些，可供用户点选" , shape: "box", title: " 目前可以双指放缩刻度，UI上可再评估优化引导方案 "}, 
+{ id: 72, label: "希望Memory界面可以通过左右滑动，觀看回放照片點開時，可以左右變換上下張" , shape: "box", title: " 可丰富APP UI交互，用户有多张Memory的照片时，可以快速地浏览 "}, 
+{ id: 73, label: "希望Message Center支持进行全选" , shape: "box", title: " 目前仅支持多选，当用户想删除大量消息，而仅保留少数时，UI上操作不方便 "}, 
+{ id: 74, label: "希望Plug可以通过Smart Action触发倒计时，触发Smart Action后，倒计时一段时间后关闭" , shape: "box", title: " 可以丰富智能场景，提升用户使用体验。例如在夜间侦测到有人移动后，自动开灯，并开启倒计时在一段时间后自动关闭 "}, 
+{ id: 75, label: "希望schedule notification功能支持同一天内设置多个不同时段" , shape: "box", title: " 希望可以对每天设置多个不一样的时间段，目前仅能设置一个时间段。当用户需要在一天内开关notification多次时，无法实现 "}, 
+{ id: 76, label: "希望smart action的auto off timer可以支持更长时间，不止是60分钟" , shape: "box", title: " 仅记录，看后续反馈数量 "}, 
+{ id: 77, label: "希望Tapo APP支持深色模式" , shape: "box", title: " 用户在夜间模式，UI会过于刺眼。增加深色模式有助于提升用户在夜间使用的体验 "}, 
+{ id: 78, label: "希望Tapo app支持瑞典语" , shape: "box", title: " 影响瑞典用户的使用体验，建议添加语言支持 "}, 
+{ id: 79, label: "希望Tapo app支持越南语" , shape: "box", title: " 影响越南用户的使用体验，建议添加语言支持 "}, 
+{ id: 80, label: "希望Tapo Cam支持画中画/浮窗功能，live view可以在别的APP上显示" , shape: "box", title: " 可丰富产品功能，由于暂无相关计划，仅记录 "}, 
+{ id: 81, label: "希望可以在不重置的情况下修改设备的wifi网络" , shape: "box", title: " 如果用户更换了路由器或者Wi-Fi密码，需要Reset设备重新配置。当用户设备较多时，重新配置较繁琐。 "}, 
+{ id: 82, label: "希望可以将liveview显示的日期格式改为英国日期格式ddmmyyyy" , shape: "box", title: " 可丰富产品功能，对于英国用户来说使用其他日期格式不符合习惯 "}, 
+{ id: 83, label: "希望可以改变camera alert消息提示声音，跟其他提示音区分开来" , shape: "box", title: " 相机侦测的移动侦测推送，对用户的重要性较高，可以通过不同的提示音更有效地提醒用户，有助于提升用户体验 "}, 
+{ id: 84, label: "希望可以添加fish tank icon" , shape: "box", title: " 用户希望APP能设计更多的device icon "}, 
+{ id: 85, label: "希望可以添加TV icon" , shape: "box", title: " 用户希望APP能设计更多的device icon "}, 
+{ id: 86, label: "希望可以添加更多device icon" , shape: "box", title: " 用户希望APP能设计更多的device icon "}, 
+{ id: 87, label: "希望可以添加空调 icon" , shape: "box", title: " 用户希望APP能设计更多的device icon "}, 
+{ id: 88, label: "希望可以自定义设备在home page的显示顺序" , shape: "box", title: " 目前无法更改设备的显示顺序，影响用户使用体验 "}, 
+{ id: 89, label: "希望可以设置Group, 来快捷开启关闭多个设备" , shape: "box", title: " 当用户设备较多时，可以添加group，一键开关多个设备 "}, 
+{ id: 90, label: "希望在连续观看时，不出现自动暂停及连续观看的弹窗" , shape: "box", title: " 用户在长时间连续观看时，每隔5分钟会出现自动暂停，并弹窗询问用户是否要继续观看，用户体验较差。建议可以给用户延长或关闭该弹窗的选项，添加到Tapo Care套餐内 "}, 
+{ id: 91, label: "希望增加被分享账户的数量" , shape: "box", title: " 目前当前分享功能限制较多，被分享的账号只能观看相机的live view，使用体验差。 "}, 
+{ id: 92, label: "希望提升警铃声的音量" , shape: "box", title: " 部分用户希望提高Alarm的音量，目前仅做记录 "}, 
+{ id: 93, label: "希望支持email notification功能，发送notification时可以同时发送邮件给用户" , shape: "box", title: " 可丰富产品功能(NC系列有该功能)，由于暂无相关计划，仅记录 "}, 
+{ id: 94, label: "希望支持从APP下载录像到手机上" , shape: "box", title: " 当用户的相机安装在天花板等位置，不便拿取SD卡时，无法快捷下载录像，使用体验较差 "}, 
+{ id: 95, label: "希望支持声音侦测" , shape: "box", title: " 丰富了侦测场景，例如在侦测到婴儿哭时，可以触发侦测并及时提醒用户 "}, 
+{ id: 96, label: "希望支持设置L510断电再来电后的默认开关状态" , shape: "box", title: " 现在L510的默认状态就是开启，假设半夜关闭之后，突然断电后来电，灯泡会开启，体验不好 "}, 
+{ id: 97, label: "希望支持设置plug断电再来电后的默认开关状态" , shape: "box", title: " 目前plug在断电恢复来电后，默认状态是OFF，如果plug接了某些负载如冰箱、路由器等，用户不在家时发生短暂断电，并不方便给plug重新上电，会给用户造成困扰 "}, 
+{ id: 98, label: "希望支持设置schedule实现每隔x天/x周执行一次" , shape: "box", title: " 仅记录，看后续反馈数量 "}, 
+{ id: 99, label: "希望每个camera都可以设置自己的登录密码，以保障使用安全" , shape: "box", title: " 仅记录，看后续反馈数量 "}, 
+{ id: 100, label: "希望添加speaker mute按键，在看camera liveview时可以关掉声音" , shape: "box", title: " 可丰富APP UI交互，用户在控制音量大小的时候，也可以设置静音 "}, 
+{ id: 101, label: "希望相机可以根据用户设置，固定画质为HQ" , shape: "box", title: " 目前相机在处于Relay访问时，画质会自动切换到LQ，影响用户使用体验 "}, 
+{ id: 102, label: "希望短时间内频繁触发移动侦测时，只发送一条Notification" , shape: "box", title: " 在Motion Detection被连续触发时，会不断地给用户发送notification，打扰用户 "}, 
+{ id: 103, label: "希望统计耗电量的单位支持kWh" , shape: "box", title: " 仅记录，看后续反馈数量 "}, 
+{ id: 104, label: "希望被分享的账户可以使用语音通话及PTZ功能" , shape: "box", title: " 目前当前分享功能限制较多，被分享的账号只能观看相机的live view，使用体验差。 "}, 
+{ id: 105, label: "希望被分享的账户可以拥有更多控制的权限" , shape: "box", title: " 目前当前分享功能限制较多，被分享的账号只能观看相机的live view，使用体验差。 "}, 
+{ id: 106, label: "希望被分享账号可以管理设置smart action" , shape: "box", title: " 目前当前分享功能限制较多，被分享的账号只能观看相机的live view，使用体验差。 "}, 
+{ id: 107, label: "希望连续录制开启时，可以高亮显示移动侦测片段" , shape: "box", title: " 用户开启连续录制时，在Playback内无法定位到移动侦测触发时的片段，并且和UG的宣传不符，使用体验不佳 "}, 
+{ id: 108, label: "希望降低警铃声的音量" , shape: "box", title: " 部分用户希望降低Alarm的音量，目前仅做记录 "}, 
+{ id: 109, label: "扬声器的音质差" , shape: "box", title: " 用户反馈扬声器的音质较差，听不清 "}, 
+{ id: 110, label: "支持在Camera触发motion detection时，控制插座，灯泡" , shape: "box", title: " 可以增加智能场景，丰富用户使用体验。例如可以在侦测到有人经过时，自动开灯，五分钟内没有人经过时，自动关灯。 "}, 
+{ id: 111, label: "支持电子围栏，在离开或者回到家时能触发智能场景" , shape: "box", title: " 可以丰富智能场景，例如用户回到家，连接到家里的Wi-Fi时，可以自动关闭相机的移动侦测，并打开插座，灯泡等。 "}, 
+{ id: 112, label: "支持通过WEB UI管理相机" , shape: "box", title: " 用户可以在多平台，快捷登录Web UI管理相机。\n间接提高了用户通过PC管理相机的体验 "}, 
+{ id: 113, label: "用户希望可以设置Schedule, 定时开启/关闭相机的移动侦测" , shape: "box", title: " 在用户离开家时，可以定时开启相机的移动侦测功能，在回到家时，定时关闭 "}, 
+{ id: 114, label: "用户希望支持在Apple Watch上使用设备，查看设备状态" , shape: "box", title: " 可丰富产品功能，由于暂无相关计划，仅记录 "}, 
+{ id: 115, label: "用户希望设备可以使用Alexa Scene, Alexa smart action" , shape: "box", title: " 可丰富产品功能，由于暂无相关计划，仅记录 "}, 
+{ id: 116, label: "用户希望设备可以通过Home assistant来控制" , shape: "box", title: " 可丰富产品功能，由于暂无相关计划，仅记录 "}, 
+{ id: 117, label: "用户希望设备可以通过IFTTT来控制" , shape: "box", title: " 可丰富产品功能，由于暂无相关计划，仅记录 "}, 
+{ id: 118, label: "用户希望设备可以通过Siri及Homekit来控制" , shape: "box", title: " 可丰富产品功能，由于暂无相关计划，仅记录 "}, 
+{ id: 119, label: "用户希望设备可以通过三星Smart things来控制" , shape: "box", title: " 可丰富产品功能，由于暂无相关计划，仅记录 "}, 
+{ id: 120, label: "用户希望设备可以通过米家来控制" , shape: "box", title: " 可丰富产品功能，由于暂无相关计划，仅记录 "}, 
+{ id: 121, label: "用户抱怨相机拍摄的画面有水印" , shape: "box", title: " 仅记录，看后续反馈数量 "}, 
+{ id: 122, label: "相机的画质较差" , shape: "box", title: " 相机码率不稳定，块效应明显，建议后续优化 "}, 
+
+
+      ]);
+
+      // create an array with edges
+      var edges = new vis.DataSet([
+
+      { from: 1, to: 5},
+{ from: 51, to: 5},
+{ from: 2, to: 6},
+{ from: 52, to: 6},
+{ from: 2, to: 7},
+{ from: 53, to: 7},
+{ from: 3, to: 8},
+{ from: 54, to: 8},
+{ from: 3, to: 9},
+{ from: 55, to: 9},
+{ from: 56, to: 9},
+{ from: 4, to: 10},
+{ from: 57, to: 10},
+{ from: 2, to: 11},
+{ from: 58, to: 11},
+{ from: 1, to: 12},
+{ from: 59, to: 12},
+{ from: 4, to: 13},
+{ from: 60, to: 13},
+{ from: 2, to: 14},
+{ from: 61, to: 14},
+{ from: 4, to: 15},
+{ from: 62, to: 15},
+{ from: 3, to: 16},
+{ from: 63, to: 16},
+{ from: 2, to: 17},
+{ from: 64, to: 17},
+{ from: 2, to: 18},
+{ from: 65, to: 18},
+{ from: 2, to: 19},
+{ from: 66, to: 19},
+{ from: 3, to: 20},
+{ from: 67, to: 20},
+{ from: 3, to: 21},
+{ from: 68, to: 21},
+{ from: 69, to: 20},
+{ from: 2, to: 22},
+{ from: 70, to: 22},
+{ from: 2, to: 23},
+{ from: 71, to: 23},
+{ from: 2, to: 24},
+{ from: 72, to: 24},
+{ from: 3, to: 25},
+{ from: 73, to: 25},
+{ from: 1, to: 26},
+{ from: 74, to: 26},
+{ from: 2, to: 27},
+{ from: 75, to: 27},
+{ from: 76, to: 26},
+{ from: 3, to: 28},
+{ from: 77, to: 28},
+{ from: 3, to: 29},
+{ from: 78, to: 29},
+{ from: 79, to: 29},
+{ from: 2, to: 30},
+{ from: 80, to: 30},
+{ from: 1, to: 31},
+{ from: 81, to: 31},
+{ from: 2, to: 32},
+{ from: 82, to: 32},
+{ from: 2, to: 33},
+{ from: 83, to: 33},
+{ from: 3, to: 34},
+{ from: 84, to: 34},
+{ from: 85, to: 34},
+{ from: 86, to: 34},
+{ from: 87, to: 34},
+{ from: 88, to: 20},
+{ from: 3, to: 15},
+{ from: 89, to: 15},
+{ from: 2, to: 35},
+{ from: 90, to: 35},
+{ from: 2, to: 36},
+{ from: 91, to: 36},
+{ from: 2, to: 37},
+{ from: 92, to: 37},
+{ from: 2, to: 38},
+{ from: 93, to: 38},
+{ from: 94, to: 23},
+{ from: 2, to: 39},
+{ from: 95, to: 39},
+{ from: 4, to: 40},
+{ from: 96, to: 40},
+{ from: 1, to: 40},
+{ from: 97, to: 40},
+{ from: 3, to: 26},
+{ from: 98, to: 26},
+{ from: 2, to: 41},
+{ from: 99, to: 41},
+{ from: 100, to: 7},
+{ from: 2, to: 42},
+{ from: 101, to: 42},
+{ from: 2, to: 43},
+{ from: 102, to: 43},
+{ from: 103, to: 5},
+{ from: 104, to: 36},
+{ from: 105, to: 36},
+{ from: 106, to: 36},
+{ from: 107, to: 23},
+{ from: 108, to: 37},
+{ from: 2, to: 44},
+{ from: 109, to: 44},
+{ from: 110, to: 26},
+{ from: 3, to: 45},
+{ from: 111, to: 45},
+{ from: 2, to: 46},
+{ from: 112, to: 46},
+{ from: 2, to: 47},
+{ from: 113, to: 47},
+{ from: 3, to: 48},
+{ from: 114, to: 48},
+{ from: 115, to: 48},
+{ from: 116, to: 48},
+{ from: 117, to: 48},
+{ from: 118, to: 48},
+{ from: 119, to: 48},
+{ from: 120, to: 48},
+{ from: 2, to: 49},
+{ from: 121, to: 49},
+{ from: 2, to: 50},
+{ from: 122, to: 50},
+
+
+      ]);
+
+      // create a network
+      var container = document.getElementById("mynetwork");
+      var data = {
+        nodes: nodes,
+        edges: edges,
+      };
+      var options = {};
+      var network = new vis.Network(container, data, options);
+    </script>
+  </body>
+</html>
